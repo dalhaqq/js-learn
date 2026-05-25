@@ -1,0 +1,45 @@
+name: Release VSIX
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release (e.g. 0.2.2)"
+        required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run compile
+
+      - name: Set version (manual dispatch)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          npm version "${{ inputs.version }}" --no-git-tag-version --allow-same-version
+
+      - name: Package VSIX
+        run: npx @vscode/vsce package -o "js-learn-$(node -p "require('./package.json').version").vsix"
+
+      - name: Upload VSIX to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*.vsix"
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
