@@ -1,0 +1,20 @@
+{
+  "id": "dom-styles-005",
+  "type": "write",
+  "title": "Mengubah Gaya Elemen",
+  "description": "Selain mengubah konten teks, JavaScript juga dapat mengubah tampilan visual elemen DOM melalui properti `.style`. Properti ini memungkinkan kamu mengubah warna teks, ukuran font, latar belakang, lebar, tinggi, border, dan berbagai properti CSS lainnya secara dinamis. Perhatikan bahwa properti CSS yang menggunakan tanda hubung (seperti `background-color`) ditulis dalam format camelCase di JavaScript (`backgroundColor`). Selain `.style`, kamu juga dapat menggunakan `.classList` untuk menambah atau menghapus class CSS yang sudah didefinisikan di stylesheet.\n\n**Instruksi:**\n1. Pilih elemen dengan id `kotak` menggunakan `document.getElementById`\n2. Ubah warna latar belakang menjadi \"lightblue\" menggunakan `style.backgroundColor`\n3. Ubah lebar menjadi \"200px\" menggunakan `style.width`\n4. Ubah tinggi menjadi \"100px\" menggunakan `style.height`\n5. Tambahkan border \"2px solid blue\" menggunakan `style.border`\n6. Tampilkan pesan \"Gaya berhasil diubah\" menggunakan `console.log()`",
+  "difficulty": "medium",
+  "topic": "dom",
+  "prerequisites": ["dom-selector-001"],
+  "starterCode": "// HTML yang tersedia:\n// <div id=\"kotak\" style=\"padding: 10px;\">Konten saya</div>\n\n// 1. Pilih elemen kotak menggunakan document.getElementById\n\n// 2. Ubah backgroundColor menjadi \"lightblue\"\n\n// 3. Ubah width menjadi \"200px\"\n\n// 4. Ubah height menjadi \"100px\"\n\n// 5. Tambahkan border \"2px solid blue\"\n\n// 6. Tampilkan pesan sukses ke console\n",
+  "solution": "const kotak = document.getElementById('kotak');\nkotak.style.backgroundColor = 'lightblue';\nkotak.style.width = '200px';\nkotak.style.height = '100px';\nkotak.style.border = '2px solid blue';\nconsole.log('Gaya berhasil diubah');",
+  "verification": {
+    "mode": "output",
+    "expectedOutput": "Gaya berhasil diubah"
+  },
+  "hints": [
+    "Properti CSS `background-color` ditulis sebagai `backgroundColor` di JavaScript — semua properti CSS dengan tanda hubung diubah ke camelCase.",
+    "Nilai properti style harus berupa string teks, termasuk satuannya: gunakan `'200px'` bukan `200`.",
+    "Setiap pengubahan style ditulis dalam baris terpisah: `kotak.style.width = '200px';` lalu `kotak.style.height = '100px';` — jangan digabung dalam satu baris."
+  ]
+}

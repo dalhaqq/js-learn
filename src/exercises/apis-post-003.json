@@ -1,0 +1,21 @@
+{
+  "id": "apis-post-003",
+  "type": "write",
+  "title": "Mengirim Data dengan POST",
+  "description": "Selain mengambil data (GET), HTTP juga menyediakan metode POST untuk mengirim data ke server. Saat menggunakan fetch() untuk POST, kamu perlu menambahkan objek konfigurasi dengan properti `method: 'POST'`, `headers` (Content-Type), dan `body` (data yang dikirim dalam format JSON). Server akan merespons dengan data yang baru dibuat, biasanya dengan status 201 (Created).\n\n**Instruksi:**\n1. Buat objek `dataBaru` berisi properti: title (string), body (string), userId (number) — contoh: `{ title: \"Post Baru\", body: \"Ini adalah konten post\", userId: 1 }`\n2. Gunakan fetch() ke URL https://jsonplaceholder.typicode.com/posts dengan method POST\n3. Tambahkan headers: 'Content-Type': 'application/json'\n4. Kirim dataBaru sebagai JSON string di body\n5. Tampilkan response dari server dengan console.log()\n\n**Catatan:** Latihan ini membutuhkan Node.js 18+.",
+  "difficulty": "medium",
+  "topic": "apis",
+  "prerequisites": ["apis-fetch-001"],
+  "starterCode": "// 1. Buat objek data yang akan dikirim\nlet dataBaru = {};\n\n// 2-4. Kirim POST request ke https://jsonplaceholder.typicode.com/posts\nfetch('https://jsonplaceholder.typicode.com/posts')\n  // ...\n  // ...\n  // ...\n\n// 5. Tampilkan response\n",
+  "solution": "let dataBaru = { title: 'Post Baru', body: 'Ini adalah konten post', userId: 1 };\nfetch('https://jsonplaceholder.typicode.com/posts', {\n  method: 'POST',\n  headers: { 'Content-Type': 'application/json' },\n  body: JSON.stringify(dataBaru)\n})\n  .then(response => response.json())\n  .then(data => console.log('Data berhasil dikirim:', JSON.stringify(data)))\n  .catch(error => console.error('Error:', error.message));",
+  "verification": {
+    "mode": "test",
+    "testCode": "assert(typeof dataBaru === 'object', 'Harus membuat objek dataBaru'); assert(dataBaru.title !== undefined, 'dataBaru harus memiliki properti title'); assert(dataBaru.body !== undefined, 'dataBaru harus memiliki properti body'); assert(dataBaru.userId !== undefined, 'dataBaru harus memiliki properti userId'); assert(typeof dataBaru.title === 'string', 'title harus bertipe string'); assert(typeof dataBaru.body === 'string', 'body harus bertipe string'); assert(typeof dataBaru.userId === 'number', 'userId harus bertipe number');"
+  },
+  "hints": [
+    "Objek konfigurasi fetch() memiliki properti method, headers, dan body — tambahkan sebagai parameter kedua setelah URL",
+    "Gunakan JSON.stringify() untuk mengubah objek JavaScript menjadi string JSON sebelum dikirim melalui body",
+    "Header 'Content-Type': 'application/json' memberi tahu server bahwa data yang dikirim dalam format JSON"
+  ],
+  "requiredNodeVersion": 18
+}

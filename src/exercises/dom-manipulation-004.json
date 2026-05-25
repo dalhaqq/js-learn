@@ -1,0 +1,20 @@
+{
+  "id": "dom-manipulation-004",
+  "type": "write",
+  "title": "Mengubah Konten Elemen",
+  "description": "Setelah bisa memilih elemen DOM, langkah selanjutnya adalah mengubah kontennya. JavaScript menyediakan beberapa properti: `textContent` untuk mengubah teks biasa (tanpa HTML), `innerHTML` untuk mengubah konten termasuk tag HTML, dan `innerText` untuk teks yang terlihat saja setelah memperhitungkan styling CSS. Hati-hati dengan `innerHTML` karena dapat menimbulkan risiko keamanan XSS (Cross-Site Scripting) jika digunakan langsung dengan input pengguna tanpa sanitasi. Oleh karena itu, gunakan `textContent` jika hanya perlu mengubah teks.\n\n**Instruksi:**\n1. Pilih elemen dengan id `judul` menggunakan `document.getElementById`\n2. Ubah `textContent` elemen judul menjadi \"Selamat Datang di Toko Buku\"\n3. Pilih elemen dengan id `deskripsi`\n4. Ubah `innerHTML` elemen deskripsi menjadi \"Kami menyediakan <strong>1000+</strong> judul buku\"\n5. Tampilkan `textContent` judul yang baru ke console menggunakan `console.log()`",
+  "difficulty": "medium",
+  "topic": "dom",
+  "prerequisites": ["dom-selector-001"],
+  "starterCode": "// HTML yang tersedia:\n// <h1 id=\"judul\">Judul Lama</h1>\n// <p id=\"deskripsi\">Deskripsi lama</p>\n\n// 1. Pilih elemen judul\n\n// 2. Ubah textContent judul menjadi \"Selamat Datang di Toko Buku\"\n\n// 3. Pilih elemen deskripsi\n\n// 4. Ubah innerHTML deskripsi (dengan tag <strong>)\n\n// 5. Tampilkan judul baru ke console\n",
+  "solution": "const judul = document.getElementById('judul');\njudul.textContent = 'Selamat Datang di Toko Buku';\nconst deskripsi = document.getElementById('deskripsi');\ndeskripsi.innerHTML = 'Kami menyediakan <strong>1000+</strong> judul buku';\nconsole.log(judul.textContent);",
+  "verification": {
+    "mode": "output",
+    "expectedOutput": "Selamat Datang di Toko Buku"
+  },
+  "hints": [
+    "Gunakan `document.getElementById('judul')` untuk memilih elemen berdasarkan id — method ini mengembalikan satu elemen HTMLElement.",
+    "`textContent` hanya mengubah teks biasa tanpa memproses tag HTML, sedangkan `innerHTML` dapat menyisipkan dan merender tag HTML seperti `<strong>`.",
+    "Untuk keamanan, jangan gunakan `innerHTML` dengan input dari pengguna; gunakan `textContent` jika hanya perlu teks biasa agar terhindar dari serangan XSS."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "basics-objects-007",
+  "type": "write",
+  "title": "Objek Sederhana",
+  "description": "Objek di JavaScript menyimpan data dalam bentuk pasangan properti dan nilai (key-value). Properti objek dapat berisi berbagai tipe data: string, number, array, bahkan objek lain. Objek cocok untuk merepresentasikan entitas dunia nyata dengan banyak atribut — misalnya data pengguna (nama, email, umur), produk (nama, harga, stok), atau konfigurasi. Bandingkan dengan array yang lebih cocok untuk data sejenis (daftar nama, daftar angka). Latihan ini melatih pembuatan objek, akses properti dengan dot notation, dan mengubah nilai properti.\n\n**Instruksi:**\n1. Buat objek `buku` dengan properti: judul (string), penulis (string), tahun (number), dan tersedia (boolean)\n2. Tampilkan properti judul menggunakan dot notation\n3. Tampilkan properti penulis\n4. Ubah properti tersedia menjadi false\n5. Tampilkan objek buku setelah perubahan",
+  "difficulty": "easy",
+  "topic": "basics",
+  "prerequisites": ["basics-variables-001"],
+  "starterCode": "// 1. Buat objek buku\nlet buku = {};\n\n// 2. Tampilkan judul\n\n// 3. Tampilkan penulis\n\n// 4. Ubah tersedia menjadi false\n\n// 5. Tampilkan seluruh objek\n",
+  "solution": "let buku = { judul: \"Belajar JavaScript Dasar\", penulis: \"Andi\", tahun: 2024, tersedia: true };\nconsole.log(buku.judul);\nconsole.log(buku.penulis);\nbuku.tersedia = false;\nconsole.log(buku);",
+  "verification": {
+    "mode": "test",
+    "testCode": "assert(typeof buku === 'object' && buku !== null, 'buku harus berupa objek');\nassert(buku.judul !== undefined, 'Objek harus memiliki properti judul');\nassert(buku.penulis !== undefined, 'Objek harus memiliki properti penulis');\nassert(buku.tahun !== undefined, 'Objek harus memiliki properti tahun');\nassert(buku.tersedia === false, 'Properti tersedia harus false setelah diubah');"
+  },
+  "hints": [
+    "Untuk mengakses properti objek, gunakan dot notation: buku.judul",
+    "Gunakan console.log(buku.penulis) untuk menampilkan nilai properti penulis",
+    "Mengubah properti sama seperti mengubah variabel: buku.tersedia = false"
+  ]
+}

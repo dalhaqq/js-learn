@@ -1,0 +1,22 @@
+/**
+ * codemirror.css — Minimal CodeMirror 6 styling for VS Code webview panels.
+ *
+ * CodeMirror ships its own core styles inside the bundle. This file adds
+ * container-level styling: borders, focus, typography from VS Code tokens.
+ */
+.cm-editor {
+  min-height: 200px;
+  border: 1px solid var(--vscode-input-border);
+  border-radius: 4px;
+}
+
+.cm-editor.cm-focused {
+  outline: none;
+  border-color: var(--vscode-focusBorder);
+}
+
+.cm-editor .cm-scroller {
+  overflow: auto;
+  font-family: var(--vscode-editor-font-family);
+  font-size: var(--vscode-editor-font-size);
+}

@@ -1,0 +1,21 @@
+{
+  "id": "dom-events-002",
+  "type": "debug",
+  "title": "Pendengar Kejadian - Perbaiki Event Listener",
+  "description": "Event adalah sinyal yang dikirim browser saat terjadi interaksi — klik mouse, ketikan keyboard, scroll, atau halaman selesai dimuat. `addEventListener` mendaftarkan fungsi callback yang akan dipanggil setiap kali event terjadi. Event listener membuat halaman web interaktif: tombol yang merespons klik, form yang memvalidasi input, atau menu yang muncul saat hover. Kode berikut seharusnya menghitung berapa kali tombol diklik. Ada tiga bug: satu terkait method selector yang salah, satu terkait scope variabel di dalam callback, dan satu terkait deklarasi fungsi yang salah tempat.\n\n**Instruksi:**\n1. Baca kode dengan teliti\n2. Temukan tiga bug yang menyebabkan event listener tidak berfungsi\n3. Perbaiki kode agar penghitung klik berjalan dengan benar",
+  "difficulty": "medium",
+  "topic": "dom",
+  "prerequisites": ["dom-selector-001"],
+  "starterCode": "// Bug 1: document.getElementById() butuh string ID, bukan variabel mentah\n// Bug 2: updateHitung() didefinisikan di dalam callback, padahal definisi luar sudah ada\n// Bug 3: hitung dideklarasikan ulang dengan let di dalam callback\n\nlet hitung = 0;\n\nfunction updateHitung() {\n  document.getElementById('hasil').textContent = hitung;\n}\n\ndocument.getElementById('tombol').addEventListener('click', function() {\n  let hitung = 0;  // Bug 3: shadowing variabel luar\n  const tampilan = document.getElementById(hitung);  // Bug 1: pakai angka, bukan string\n  hitung = hitung + 1;\n\n  function updateHitung() {  // Bug 2: mendefinisikan ulang di dalam callback\n    tampilan.textContent = hitung;\n  }\n\n  updateHitung();\n});",
+  "solution": "let hitung = 0;\n\nfunction updateHitung() {\n  const tampilan = document.getElementById('hasil');\n  tampilan.textContent = hitung;\n}\n\ndocument.getElementById('tombol').addEventListener('click', function() {\n  hitung = hitung + 1;\n  updateHitung();\n  console.log('Tombol berhasil menambah hitungan');\n});",
+  "verification": {
+    "mode": "both",
+    "expectedOutput": "Tombol berhasil menambah hitungan",
+    "testCode": "const code = solution;\nassert(code.includes(\"getElementById('hasil')\"), 'Bug #1 belum diperbaiki: getElementById butuh string ID');\nassert(code.indexOf('function updateHitung') < code.indexOf('addEventListener'), 'Bug #2 belum diperbaiki: updateHitung harus di luar callback');\nassert(code.indexOf('let hitung') === code.lastIndexOf('let hitung'), 'Bug #3 belum diperbaiki: hanya satu deklarasi hitung');"
+  },
+  "hints": [
+    "Bug 1: document.getElementById() menerima nama ID dalam bentuk string — bungkus 'hasil' dengan tanda kutip, jangan pakai variabel hitung",
+    "Bug 2: Fungsi updateHitung() sudah didefinisikan di luar. Jangan mendefinisikannya ulang di dalam callback — pindahkan isinya ke fungsi yang sudah ada",
+    "Bug 3: Perhatikan deklarasi variabel hitung — jika dideklarasikan ulang dengan let di dalam callback, nilai variabel luar tidak akan pernah berubah"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "basics-template-008",
+  "type": "write",
+  "title": "Template Literal",
+  "description": "Template literal adalah cara modern untuk membuat string di JavaScript menggunakan backtick (`). Template literal memungkinkan kamu menyisipkan variabel langsung ke dalam string dengan ${variabel}, membuat string multi-baris dengan mudah, dan menggabungkan teks lebih rapi dibandingkan concatenation (+).\n\n**Instruksi:**\n1. Buat variabel `nama` dengan nama kamu\n2. Buat variabel `umur` dengan umur kamu\n3. Buat variabel `hobi` dengan hobi kamu\n4. Gunakan template literal untuk menampilkan: \"Halo, nama saya {nama}. Umur saya {umur} tahun.\"\n5. Gunakan template literal lagi untuk: \"Saya suka {hobi}.\"",
+  "difficulty": "easy",
+  "topic": "basics",
+  "prerequisites": ["basics-variables-001"],
+  "starterCode": "// 1-3. Buat variabel\nlet nama = \"\";\nlet umur = 0;\nlet hobi = \"\";\n\n// 4. Tampilkan perkenalan dengan template literal\n\n// 5. Tampilkan hobi dengan template literal\n",
+  "solution": "let nama = \"Budi\";\nlet umur = 20;\nlet hobi = \"membaca buku\";\nconsole.log(`Halo, nama saya ${nama}. Umur saya ${umur} tahun.`);\nconsole.log(`Saya suka ${hobi}.`);",
+  "verification": {
+    "mode": "test",
+    "testCode": "assert(typeof nama === 'string' && nama.length > 0, 'nama harus berupa string yang tidak kosong');\nassert(typeof umur === 'number', 'umur harus berupa number');\nassert(typeof hobi === 'string' && hobi.length > 0, 'hobi harus berupa string');"
+  },
+  "hints": [
+    "Template literal menggunakan backtick (`) bukan tanda kutip biasa",
+    "Untuk menyisipkan variabel, gunakan sintaks ${namaVariabel} di dalam backtick",
+    "Template literal bisa dibuat multi-baris tanpa perlu karakter \\n"
+  ]
+}

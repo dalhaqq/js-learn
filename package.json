@@ -1,0 +1,110 @@
+{
+  "name": "js-learn",
+  "displayName": "JS Learn",
+  "description": "Platform belajar JavaScript interaktif untuk pemula — langsung di dalam VS Code.",
+  "version": "0.2.1",
+  "publisher": "dalhaqq",
+  "icon": "media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dalhaqq/js-learn"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Education"
+  ],
+  "activationEvents": [
+    "onView:jslearn.lessons",
+    "onCommand:jslearn.openExercise",
+    "onCommand:jslearn.runCode",
+    "onCommand:jslearn.skipExercise",
+    "onCommand:jslearn.requestHint"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "jslearn",
+          "title": "JS Learn",
+          "icon": "$(code)"
+        }
+      ]
+    },
+    "views": {
+      "jslearn": [
+        {
+          "type": "tree",
+          "id": "jslearn.lessons",
+          "name": "Pelajaran"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "jslearn.openExercise",
+        "title": "Buka Latihan",
+        "category": "JS Learn"
+      },
+      {
+        "command": "jslearn.runCode",
+        "title": "Jalankan Kode",
+        "category": "JS Learn"
+      },
+      {
+        "command": "jslearn.skipExercise",
+        "title": "Lewati Latihan",
+        "category": "JS Learn"
+      },
+      {
+        "command": "jslearn.requestHint",
+        "title": "Minta Petunjuk",
+        "category": "JS Learn"
+      }
+    ],
+    "configuration": {
+      "title": "JS Learn",
+      "properties": {
+        "jslearn.progressPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path ke file progress pengguna"
+        }
+      }
+    }
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "compile": "tsc -p ./ && node scripts/build-codemirror.mjs && node -e \"require('fs').cpSync('src/exercises','out/exercises',{recursive:true,filter:(src)=>!src.endsWith('.ts') && !src.endsWith('.js.map')})\"",
+    "build:codemirror": "node scripts/build-codemirror.mjs",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.29.2",
+    "@codemirror/commands": "^6.10.3",
+    "@codemirror/lang-javascript": "^6.2.5",
+    "@codemirror/language": "^6.12.3",
+    "@codemirror/search": "^6.7.0",
+    "@codemirror/state": "^6.6.0",
+    "@codemirror/view": "^6.43.0",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@uiw/codemirror-theme-vscode": "^4.25.10",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.0",
+    "@vscode/vsce": "^3.0.0",
+    "codemirror": "^6.0.2",
+    "esbuild": "^0.28.0",
+    "eslint": "^9.0.0",
+    "mocha": "^11.0.0",
+    "typescript": "^5.3.0",
+    "typescript-eslint": "^8.0.0"
+  }
+}

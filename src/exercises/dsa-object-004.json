@@ -1,0 +1,26 @@
+{
+  "id": "dsa-object-004",
+  "type": "multiple-choice",
+  "title": "Manipulasi Objek JavaScript",
+  "description": "Objek adalah struktur data penting di JavaScript yang menyimpan data dalam bentuk pasangan key-value. Kode di bawah mendefinisikan objek `siswa` dengan properti `nama`, `nilai` (objek bersarang berisi `matematika` dan `bahasa`), dan method `sapa()` yang menggunakan kata kunci `this` untuk mengakses properti objek itu sendiri. Perhatikan dengan saksama output dari tiga operasi berikut: akses properti bersarang (`siswa.nilai.matematika`), pemanggilan method yang memakai `this` (`siswa.sapa()`), dan `Object.keys(siswa)` yang hanya menghitung properti tingkat atas. Pilih pernyataan yang BENAR berdasarkan kode tersebut.",
+  "difficulty": "easy",
+  "topic": "dsa",
+  "prerequisites": ["basics-variables-001"],
+  "starterCode": "const siswa = {\n  nama: 'Rina',\n  nilai: { matematika: 90, bahasa: 85 },\n  sapa: function() {\n    return 'Halo, saya ' + this.nama;\n  }\n};\n\nconsole.log(siswa.nilai.matematika);\nconsole.log(siswa.sapa());\nconsole.log(Object.keys(siswa).length);",
+  "choices": [
+    { "label": "A", "value": "Kode error karena `this.nama` tidak bisa diakses di dalam method objek" },
+    { "label": "B", "value": "Output: 90, Halo, saya Rina, 3. Object.keys menghitung jumlah properti tingkat atas." },
+    { "label": "C", "value": "Output: 90, Halo, saya Rina, 4. Object.keys menghitung semua properti termasuk nested." },
+    { "label": "D", "value": "Kode error karena `Object.keys` tidak bisa digunakan pada objek biasa" }
+  ],
+  "solution": "B",
+  "verification": {
+    "mode": "test",
+    "testCode": "// Jawaban B benar:\n// - siswa.nilai.matematika mengakses 90 melalui dot notation berantai\n// - siswa.sapa() memanggil method yang menggunakan this.nama\n// - Object.keys(siswa) mengembalikan ['nama', 'nilai', 'sapa'] — 3 properti tingkat atas\nconst result = 'B';\nassert(result === 'B', 'Jawaban salah. Object.keys hanya menghitung properti tingkat atas, bukan nested.');"
+  },
+  "hints": [
+    "Perhatikan cara mengakses properti bersarang: `siswa.nilai.matematika` mengakses 90.",
+    "Method objek bisa menggunakan `this` untuk merujuk ke properti di objek yang sama.",
+    "`Object.keys()` mengembalikan array berisi nama properti tingkat atas saja: `['nama', 'nilai', 'sapa']` — panjangnya 3, bukan 4."
+  ]
+}

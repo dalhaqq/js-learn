@@ -1,0 +1,20 @@
+{
+  "id": "basics-loops-003",
+  "type": "debug",
+  "title": "Perulangan for - Perbaiki Perulangan",
+  "description": "Perulangan (loop) adalah cara mengeksekusi blok kode berulang kali tanpa menulis ulang kode yang sama. Struktur for memiliki tiga bagian: inisialisasi (let i = 0), kondisi (i < 10), dan increment (i++). Loop mencegah duplikasi kode — bayangkan harus menulis 100 baris console.log tanpa loop! Kasus nyata: memproses data array, menghasilkan tabel, atau animasi frame. Kode berikut seharusnya menampilkan bilangan ganjil 1-10. Ada tiga bug. Temukan dan perbaiki!\n\n**Instruksi:**\n1. Baca kode dengan teliti\n2. Temukan tiga bug yang mencegah kode bekerja dengan benar\n3. Perbaiki kode agar menghasilkan output yang diharapkan",
+  "difficulty": "medium",
+  "topic": "basics",
+  "prerequisites": ["basics-variables-001", "basics-conditions-002"],
+  "starterCode": "// Bug 1: Kondisi perulangan salah — perulangan tidak mencapai 10\n// Bug 2: Pengecekan ganjil terbalik\n// Bug 3: Penambahan counter tidak tepat\n\nfor (let i = 1; i < 10; i++) {\n  if (i % 2 === 0) {\n    console.log(i);\n  }\n  i += 1;\n}",
+  "solution": "for (let i = 1; i <= 10; i++) {\n  if (i % 2 !== 0) {\n    console.log(i);\n  }\n}",
+  "verification": {
+    "mode": "output",
+    "expectedOutput": "1\n3\n5\n7\n9"
+  },
+  "hints": [
+    "Bug pertama: Lihat kondisi `i < 10`. Apakah angka 10 termasuk? Perbaiki menjadi `i <= 10`.",
+    "Bug kedua: `i % 2 === 0` artinya bilangan genap. Untuk ganjil, gunakan `i % 2 !== 0`.",
+    "Bug ketiga: Ada `i += 1` di dalam loop yang membuat counter bertambah dua kali setiap iterasi. Hapus baris tersebut karena `i++` di header for sudah menanganinya."
+  ]
+}

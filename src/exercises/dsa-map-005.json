@@ -1,0 +1,19 @@
+{
+  "id": "dsa-map-005",
+  "title": "Transformasi Array dengan map()",
+  "type": "write",
+  "difficulty": "medium",
+  "topic": "dsa",
+  "description": "Method `.map()` adalah salah satu higher-order function paling penting di JavaScript. Method ini membuat array baru dengan menerapkan fungsi transformasi ke setiap elemen array asli — array asli tidak berubah. `.map()` sangat berguna untuk mengubah format data, mengekstrak properti tertentu dari array objek, atau melakukan perhitungan pada setiap elemen.\n\n**Instruksi:**\n1. Buat array `angka` berisi [1, 2, 3, 4, 5]\n2. Gunakan .map() untuk membuat array baru `kuadrat` yang berisi hasil kuadrat setiap angka (n * n)\n3. Tampilkan array kuadrat dengan console.log()\n4. Gunakan .map() lagi untuk membuat array `deskripsi` yang berisi string \"Angka ke-N adalah X\" untuk setiap elemen\n5. Tampilkan array deskripsi dengan console.log()",
+  "starterCode": "// 1. Buat array angka\nlet angka = [];\n\n// 2. Gunakan .map() untuk membuat array kuadrat\nlet kuadrat = angka.map();\n\n// 3. Tampilkan kuadrat\n\n// 4. Gunakan .map() untuk membuat array deskripsi\n\n// 5. Tampilkan deskripsi\n",
+  "solution": "let angka = [1, 2, 3, 4, 5];\nlet kuadrat = angka.map(function(n) { return n * n; });\nconsole.log(kuadrat);\nlet deskripsi = angka.map(function(n, i) { return 'Angka ke-' + (i + 1) + ' adalah ' + n; });\nconsole.log(deskripsi);",
+  "hints": [
+    ".map() menerima callback function dengan parameter (elemen, indeks) — elemen adalah nilai saat ini",
+    "Callback di .map() harus mengembalikan (return) nilai baru untuk setiap elemen",
+    "Array asli (angka) tidak berubah setelah .map() — method ini membuat array baru"
+  ],
+  "verification": {
+    "mode": "test",
+    "testCode": "assert(Array.isArray(kuadrat), 'kuadrat harus berupa array'); assert(kuadrat.length === 5, 'kuadrat harus memiliki 5 elemen'); assert(kuadrat[0] === 1 && kuadrat[4] === 25, 'kuadrat harus berisi hasil pangkat dua'); assert(Array.isArray(deskripsi) && deskripsi.length === 5, 'deskripsi harus array 5 elemen');"
+  }
+}

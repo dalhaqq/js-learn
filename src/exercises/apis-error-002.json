@@ -1,0 +1,21 @@
+{
+  "id": "apis-error-002",
+  "type": "debug",
+  "title": "Menangani Error API",
+  "description": "Operasi jaringan tidak selalu berhasil — server bisa mati, internet terputus, atau API mengembalikan error. Ada dua jenis error: jaringan (fetch gagal total — ditangkap .catch()) dan HTTP error (server merespons dengan status 404 atau 500 — fetch tetap berhasil tapi response.ok = false). response.ok bernilai true hanya untuk status 200-299. Error handling yang baik mencegah aplikasi crash dan memberi pesan bermakna ke pengguna. Kode berikut memiliki tiga bug terkait penanganan error: urutan catch yang salah, pengecekan status response yang keliru, dan cara melempar error yang tidak tepat.",
+  "difficulty": "medium",
+  "topic": "apis",
+  "prerequisites": ["apis-fetch-001"],
+  "starterCode": "// Bug 1: URL salah — API tidak mengembalikan data seperti yang diharapkan\n// Bug 2: Response tidak dicek status-nya sebelum parsing JSON\n// Bug 3: .catch() dipasang sebelum .then() — urutan rantai salah\n\nfetch('https://jsonplaceholder.typicode.com/users/999')\n  .catch(function(error) {\n    console.log('Error: ' + error.message);\n  })\n  .then(function(response) {\n    return response.json();\n  })\n  .then(function(data) {\n    if (!data.name) {\n      throw new Error('Pengguna tidak ditemukan');\n    }\n    console.log(data.name);\n  });",
+  "solution": "fetch('https://jsonplaceholder.typicode.com/users/999')\n  .then(function(response) {\n    if (!response.ok) {\n      throw new Error('Gagal mengambil data: ' + response.status);\n    }\n    return response.json();\n  })\n  .then(function(data) {\n    if (!data.name) {\n      throw new Error('Pengguna tidak ditemukan');\n    }\n    console.log(data.name);\n  })\n  .catch(function(error) {\n    console.log('Error: ' + error.message);\n  });",
+  "verification": {
+    "mode": "test",
+    "testCode": "const code = solution;\nassert(code.includes('.catch('), 'Harus memiliki .catch() untuk penanganan error');\nassert(code.indexOf('.then(') < code.indexOf('.catch('), '.catch() harus berada di akhir rantai, setelah semua .then()');\nassert(code.includes('response.ok'), 'Harus mengecek response.ok sebelum parsing JSON');"
+  },
+  "hints": [
+    "Bug pertama: periksa urutan `.then()` dan `.catch()`. `.catch()` harus berada di akhir rantai promise.",
+    "Bug kedua: sebelum mengurai JSON, periksa `response.ok` untuk memastikan request berhasil.",
+    "Bug ketiga: jika response tidak ok, lempar error dengan `throw new Error(...)` agar ditangkap oleh `.catch()`."
+  ],
+  "requiredNodeVersion": 18
+}

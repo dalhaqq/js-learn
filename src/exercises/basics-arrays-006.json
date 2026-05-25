@@ -1,0 +1,20 @@
+{
+  "id": "basics-arrays-006",
+  "type": "write",
+  "title": "Array dan Indeks",
+  "description": "Array (larik) adalah struktur data yang menyimpan kumpulan nilai dalam satu variabel. Setiap nilai diakses melalui indeks yang dimulai dari 0. Array dipakai di mana-mana: menyimpan daftar produk di toko online, daftar pengguna di aplikasi chat, atau hasil pencarian. Indeks dimulai dari 0 karena JavaScript (seperti bahasa turunan C) menghitung jarak dari alamat memori awal — elemen pertama di offset 0 byte dari awal array. Latihan ini melatih pembuatan array, akses elemen berdasarkan indeks, dan mengubah elemen array.\n\n**Instruksi:**\n1. Buat array `warna` berisi: \"merah\", \"kuning\", \"hijau\", \"biru\"\n2. Tampilkan elemen pertama (indeks 0) menggunakan console.log()\n3. Tampilkan elemen ketiga (indeks 2) menggunakan console.log()\n4. Ubah elemen keempat (indeks 3) menjadi \"ungu\"\n5. Tampilkan seluruh array setelah perubahan",
+  "difficulty": "easy",
+  "topic": "basics",
+  "prerequisites": ["basics-variables-001"],
+  "starterCode": "// 1. Buat array warna\nlet warna = [];\n\n// 2. Tampilkan elemen pertama\n\n// 3. Tampilkan elemen ketiga\n\n// 4. Ubah elemen keempat menjadi \"ungu\"\n\n// 5. Tampilkan seluruh array\n",
+  "solution": "let warna = [\"merah\", \"kuning\", \"hijau\", \"biru\"];\nconsole.log(warna[0]);\nconsole.log(warna[2]);\nwarna[3] = \"ungu\";\nconsole.log(warna);",
+  "verification": {
+    "mode": "test",
+    "testCode": "assert(typeof warna === 'object' && Array.isArray(warna), 'warna harus berupa array');\nassert(warna.length === 4, 'Array harus memiliki 4 elemen');\nassert(warna[3] === 'ungu', 'Elemen keempat harus ungu');\nassert(warna[0] === 'merah', 'Elemen pertama harus merah');"
+  },
+  "hints": [
+    "Indeks array dimulai dari 0 — elemen pertama adalah array[0], ketiga adalah array[2]",
+    "Gunakan warna[0] untuk mengakses elemen pertama",
+    "Untuk mengubah elemen, gunakan assignment: warna[3] = \"ungu\""
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "apis-fetch-001",
+  "type": "write",
+  "title": "Mengambil Data dari API",
+  "description": "API adalah jembatan komunikasi antara aplikasi kamu dan server di internet. API memungkinkan kamu mengambil data dari server tanpa akses langsung ke database. fetch() adalah fungsi bawaan JavaScript untuk mengirim permintaan HTTP ke API — ia mengembalikan Promise. Response dari fetch perlu di-parse dengan response.json() karena data HTTP selalu berupa teks, bukan objek JavaScript. API dipakai di aplikasi modern: menampilkan cuaca, memuat postingan, atau login. Kamu akan menggunakan fetch untuk mengambil data postingan dari JSONPlaceholder API.",
+  "difficulty": "medium",
+  "topic": "apis",
+  "prerequisites": ["async-promise-002"],
+  "starterCode": "// Gunakan fetch untuk mengambil data dari API\nfetch('https://jsonplaceholder.typicode.com/posts/1')\n  // Ubah response ke JSON dengan .then()\n  // Tampilkan data.title dengan .then()\n  // Tangani error dengan .catch()\n",
+  "solution": "fetch('https://jsonplaceholder.typicode.com/posts/1')\n  .then(function(response) {\n    return response.json();\n  })\n  .then(function(data) {\n    console.log(data.title);\n  })\n  .catch(function(error) {\n    console.log('Gagal mengambil data');\n  });",
+  "verification": {
+    "mode": "output",
+    "expectedOutput": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
+  },
+  "hints": [
+    "Mulai dengan `fetch('https://jsonplaceholder.typicode.com/posts/1')`.",
+    "Rantai `.then()` pertama untuk mengubah response: `.then(function(response) { return response.json(); })`.",
+    "Rantai `.then()` kedua untuk mengakses data: `.then(function(data) { console.log(data.title); })`. Akhiri dengan `.catch()`."
+  ],
+  "requiredNodeVersion": 18
+}

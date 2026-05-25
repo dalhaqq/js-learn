@@ -1,0 +1,20 @@
+{
+  "id": "basics-strings-005",
+  "type": "write",
+  "title": "Metode Dasar String",
+  "description": "String adalah tipe data untuk teks di JavaScript. JavaScript menyediakan banyak metode bawaan untuk memanipulasi string. Metode ini sering digunakan dalam validasi input (misalnya membandingkan email tanpa peduli huruf besar/kecil), memformat teks untuk ditampilkan ke pengguna, atau membuat batasan karakter di formulir. Latihan ini melatih penggunaan tiga metode dasar: .toUpperCase() untuk mengubah teks menjadi huruf besar, .toLowerCase() menjadi huruf kecil, dan .length untuk menghitung jumlah karakter dalam string.\n\n**Instruksi:**\n1. Buat variabel `teks` dengan nilai \"Belajar JavaScript itu Menyenangkan\"\n2. Tampilkan `teks` dalam huruf besar semua menggunakan .toUpperCase()\n3. Tampilkan `teks` dalam huruf kecil semua menggunakan .toLowerCase()\n4. Tampilkan jumlah karakter `teks` menggunakan .length",
+  "difficulty": "easy",
+  "topic": "basics",
+  "prerequisites": ["basics-variables-001"],
+  "starterCode": "// 1. Buat variabel teks\nlet teks = \"\";\n\n// 2. Tampilkan dalam huruf besar\n\n// 3. Tampilkan dalam huruf kecil\n\n// 4. Tampilkan jumlah karakter\n",
+  "solution": "let teks = \"Belajar JavaScript itu Menyenangkan\";\nconsole.log(teks.toUpperCase());\nconsole.log(teks.toLowerCase());\nconsole.log(teks.length);",
+  "verification": {
+    "mode": "output",
+    "expectedOutput": "BELAJAR JAVASCRIPT ITU MENYENANGKAN\nbelajar javascript itu menyenangkan\n35"
+  },
+  "hints": [
+    "Gunakan .toUpperCase() pada variabel teks untuk mengubahnya menjadi huruf besar",
+    "Gunakan .toLowerCase() pada variabel teks untuk mengubahnya menjadi huruf kecil",
+    "Properti .length (tanpa tanda kurung) langsung mengembalikan jumlah karakter string"
+  ]
+}

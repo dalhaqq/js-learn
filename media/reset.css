@@ -1,0 +1,142 @@
+/**
+ * reset.css — Webview CSS Reset / Normalization
+ *
+ * Ensures consistent baseline styling across VS Code webview panels.
+ * All color, font, and spacing values are sourced from VS Code theme
+ * variables so the webview adapts automatically to light/dark themes.
+ * ========================================================================== */
+
+/* ── Box-sizing reset ─────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Document body ────────────────────────────────────────────────────── */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--vscode-font-family);
+  font-size: var(--vscode-font-size);
+  font-weight: var(--vscode-font-weight);
+  color: var(--vscode-foreground);
+  background-color: var(--vscode-editor-background);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography normalisation ─────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  color: var(--vscode-editor-foreground);
+}
+
+p {
+  margin: 0 0 0.75em 0;
+  color: var(--vscode-foreground);
+}
+
+ul, ol {
+  margin: 0 0 0.75em 0;
+  padding-left: 1.5em;
+  color: var(--vscode-foreground);
+}
+
+li {
+  margin-bottom: 0.25em;
+}
+
+/* ── Inline elements ──────────────────────────────────────────────────── */
+a {
+  color: var(--vscode-textLink-foreground);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--vscode-textLink-activeForeground);
+  text-decoration: underline;
+}
+
+code, pre {
+  font-family: var(--vscode-editor-font-family);
+  font-size: var(--vscode-editor-font-size);
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ── Form elements ────────────────────────────────────────────────────── */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ── Images & media ───────────────────────────────────────────────────── */
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Details / Summary (used for hints) ───────────────────────────────── */
+details > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ── Scrollbar styling (VS Code theme-aware) ──────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vscode-scrollbarSlider-background);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vscode-scrollbarSlider-hoverBackground);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--vscode-scrollbarSlider-activeBackground);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* ── Focus visible (keyboard navigation) ──────────────────────────────── */
+:focus-visible {
+  outline: 1px solid var(--vscode-focusBorder);
+  outline-offset: 1px;
+}
+
+/* ── Selection ────────────────────────────────────────────────────────── */
+::selection {
+  background: var(--vscode-editor-selectionBackground);
+}

@@ -1,0 +1,20 @@
+{
+  "id": "dsa-sort-002",
+  "type": "write",
+  "title": "Pengurutan Larik (Sorting)",
+  "description": "Pengurutan (sorting) adalah operasi dasar dalam pemrosesan data — mengatur elemen berdasarkan urutan tertentu. JavaScript menyediakan method .sort() yang menerima fungsi pembanding (comparator). Comparator menerima dua parameter (a, b) dan harus mengembalikan: nilai negatif jika a sebelum b, 0 jika posisi sama, nilai positif jika b sebelum a. Untuk urutan naik: a - b. Untuk urutan turun: b - a. [...angka] (spread operator) membuat salinan array agar array asli tidak berubah — prinsip immutability. Sorting dipakai untuk: peringkat skor, daftar produk termurah, atau persiapan data untuk binary search.",
+  "difficulty": "medium",
+  "topic": "dsa",
+  "prerequisites": ["dsa-array-001"],
+  "starterCode": "// 1. Buat larik angka\nconst angka = [];\n\n// 2. Urutkan dari terkecil ke terbesar (ascending)\n// Gunakan .sort() dengan fungsi pembanding (a - b)\n\n// 3. Urutkan dari terbesar ke terkecil (descending)\n// Gunakan .sort() dengan fungsi pembanding (b - a)\n\n// 4. Tampilkan hasil\n// console.log('Naik: ' + ...);\n// console.log('Turun: ' + ...);\n",
+  "solution": "const angka = [5, 2, 9, 1, 7, 3];\n\nconst naik = [...angka].sort(function(a, b) {\n  return a - b;\n});\nconsole.log('Naik: ' + naik.join(', '));\n\nconst turun = [...angka].sort(function(a, b) {\n  return b - a;\n});\nconsole.log('Turun: ' + turun.join(', '));",
+  "verification": {
+    "mode": "output",
+    "expectedOutput": "Naik: 1, 2, 3, 5, 7, 9\nTurun: 9, 7, 5, 3, 2, 1"
+  },
+  "hints": [
+    "Gunakan spread operator `[...angka]` untuk menyalin larik agar larik asli tidak berubah.",
+    "Fungsi pembanding untuk urut naik: `function(a, b) { return a - b; }` — return negatif artinya a di depan b.",
+    "Untuk urut turun, balikkan pembanding: `function(a, b) { return b - a; }`."
+  ]
+}

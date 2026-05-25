@@ -1,0 +1,104 @@
+/**
+ * vscode.css — VS Code Theme CSS Variable Mapping
+ *
+ * Central reference for all VS Code CSS custom properties available
+ * in webview panels. These variables are injected by VS Code and
+ * automatically adapt when the user switches between light and dark themes.
+ *
+ * Usage in other CSS files:
+ *   color: var(--vscode-editor-foreground);
+ *   background: var(--vscode-editor-background);
+ *
+ * NEVER hardcode colors — ALWAYS use var(--vscode-*) references.
+ * ========================================================================== */
+
+:root {
+  /* ── Foreground / Background ────────────────────────────────────────── */
+  --vscode-foreground:              var(--vscode-foreground);
+  --vscode-disabledForeground:      var(--vscode-disabledForeground);
+  --vscode-editor-background:       var(--vscode-editor-background);
+  --vscode-editor-foreground:       var(--vscode-editor-foreground);
+  --vscode-editorWidget-background: var(--vscode-editorWidget-background);
+  --vscode-editorWidget-border:     var(--vscode-editorWidget-border);
+
+  /* ── Sidebar ────────────────────────────────────────────────────────── */
+  --vscode-sideBar-background:      var(--vscode-sideBar-background);
+  --vscode-sideBar-foreground:      var(--vscode-sideBar-foreground);
+  --vscode-sideBar-border:          var(--vscode-sideBar-border);
+
+  /* ── Panels & Widgets ───────────────────────────────────────────────── */
+  --vscode-panel-border:            var(--vscode-panel-border);
+  --vscode-panel-background:        var(--vscode-panel-background);
+  --vscode-widget-border:           var(--vscode-widget-border);
+  --vscode-widget-shadow:           var(--vscode-widget-shadow);
+
+  /* ── Buttons ────────────────────────────────────────────────────────── */
+  --vscode-button-background:               var(--vscode-button-background);
+  --vscode-button-foreground:               var(--vscode-button-foreground);
+  --vscode-button-hoverBackground:          var(--vscode-button-hoverBackground);
+  --vscode-button-secondaryBackground:      var(--vscode-button-secondaryBackground);
+  --vscode-button-secondaryForeground:      var(--vscode-button-secondaryForeground);
+  --vscode-button-secondaryHoverBackground: var(--vscode-button-secondaryHoverBackground);
+
+  /* ── Inputs ─────────────────────────────────────────────────────────── */
+  --vscode-input-background:           var(--vscode-input-background);
+  --vscode-input-foreground:           var(--vscode-input-foreground);
+  --vscode-input-border:               var(--vscode-input-border);
+  --vscode-input-placeholderForeground: var(--vscode-input-placeholderForeground);
+  --vscode-inputOption-activeBorder:    var(--vscode-inputOption-activeBorder);
+
+  /* ── Focus ──────────────────────────────────────────────────────────── */
+  --vscode-focusBorder: var(--vscode-focusBorder);
+
+  /* ── Typography ─────────────────────────────────────────────────────── */
+  --vscode-font-family:          var(--vscode-font-family);
+  --vscode-font-size:            var(--vscode-font-size);
+  --vscode-font-weight:          var(--vscode-font-weight);
+  --vscode-editor-font-family:   var(--vscode-editor-font-family);
+  --vscode-editor-font-size:     var(--vscode-editor-font-size);
+  --vscode-editor-font-weight:   var(--vscode-editor-font-weight);
+
+  /* ── Badges ─────────────────────────────────────────────────────────── */
+  --vscode-badge-background: var(--vscode-badge-background);
+  --vscode-badge-foreground: var(--vscode-badge-foreground);
+
+  /* ── Lists & Selection ──────────────────────────────────────────────── */
+  --vscode-list-activeSelectionBackground: var(--vscode-list-activeSelectionBackground);
+  --vscode-list-activeSelectionForeground: var(--vscode-list-activeSelectionForeground);
+  --vscode-list-hoverBackground:           var(--vscode-list-hoverBackground);
+
+  /* ── Editor internals ───────────────────────────────────────────────── */
+  --vscode-editor-lineHighlightBackground: var(--vscode-editor-lineHighlightBackground);
+  --vscode-editor-selectionBackground:     var(--vscode-editor-selectionBackground);
+  --vscode-editor-lineNumber-foreground:   var(--vscode-editor-lineNumber-foreground);
+
+  /* ── Scrollbar ──────────────────────────────────────────────────────── */
+  --vscode-scrollbarSlider-background:      var(--vscode-scrollbarSlider-background);
+  --vscode-scrollbarSlider-hoverBackground: var(--vscode-scrollbarSlider-hoverBackground);
+  --vscode-scrollbarSlider-activeBackground: var(--vscode-scrollbarSlider-activeBackground);
+
+  /* ── Links ──────────────────────────────────────────────────────────── */
+  --vscode-textLink-foreground:       var(--vscode-textLink-foreground);
+  --vscode-textLink-activeForeground: var(--vscode-textLink-activeForeground);
+
+  /* ── Terminal Colors (semantic: success / warning / error) ──────────── */
+  --vscode-terminal-ansiGreen:   var(--vscode-terminal-ansiGreen);
+  --vscode-terminal-ansiRed:     var(--vscode-terminal-ansiRed);
+  --vscode-terminal-ansiYellow:  var(--vscode-terminal-ansiYellow);
+  --vscode-terminal-ansiBlue:    var(--vscode-terminal-ansiBlue);
+  --vscode-terminal-ansiCyan:    var(--vscode-terminal-ansiCyan);
+  --vscode-terminal-ansiMagenta: var(--vscode-terminal-ansiMagenta);
+
+  /* ── Status Bar ─────────────────────────────────────────────────────── */
+  --vscode-statusBarItem-errorBackground:   var(--vscode-statusBarItem-errorBackground);
+  --vscode-statusBarItem-warningBackground: var(--vscode-statusBarItem-warningBackground);
+
+  /* ── Borders & Dividers ─────────────────────────────────────────────── */
+  --vscode-editorGroup-border:       var(--vscode-editorGroup-border);
+  --vscode-dropdown-border:          var(--vscode-dropdown-border);
+
+  /* ── Error / Warning colors (editor diagnostics) ────────────────────── */
+  --vscode-errorForeground:       var(--vscode-errorForeground);
+  --vscode-warningForeground:     var(--vscode-warningForeground);
+  --vscode-notifications-border:  var(--vscode-notifications-border);
+}

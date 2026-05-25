@@ -1,0 +1,21 @@
+{
+  "id": "basics-functions-004",
+  "type": "fill-blank",
+  "title": "Fungsi Sederhana",
+  "description": "Fungsi adalah blok kode yang bisa dipanggil berulang kali — menerima input (parameter), memprosesnya, dan mengembalikan output (return). Fungsi mencegah duplikasi kode dan membuat program modular. Contoh nyata: fungsi validasi email dipakai di halaman login dan halaman registrasi tanpa menulis ulang. Parameter adalah variabel input yang dikirim ke fungsi saat dipanggil. Lengkapi fungsi `hitungLuasPersegi` dan `sapa` dengan mengisi bagian yang kosong.\n\n**Instruksi:**\n1. Isi `___BLANK___` pertama dengan kode untuk menghitung luas persegi (sisi * sisi)\n2. Isi `___BLANK___` kedua dengan kode untuk menyapa dengan nama\n3. Panggil kedua fungsi dan tampilkan hasilnya",
+  "difficulty": "easy",
+  "topic": "basics",
+  "prerequisites": ["basics-variables-001"],
+  "starterCode": "function hitungLuasPersegi(sisi) {\n  return ___BLANK___;\n}\n\nfunction sapa(nama) {\n  return 'Halo, ' + ___BLANK___ + '!';\n}\n\nconsole.log(hitungLuasPersegi(5));\nconsole.log(sapa('Siti'));",
+  "blanks": ["sisi * sisi", "nama"],
+  "solution": "function hitungLuasPersegi(sisi) {\n  return sisi * sisi;\n}\n\nfunction sapa(nama) {\n  return 'Halo, ' + nama + '!';\n}\n\nconsole.log(hitungLuasPersegi(5));\nconsole.log(sapa('Siti'));",
+  "verification": {
+    "mode": "output",
+    "expectedOutput": "25\nHalo, Siti!"
+  },
+  "hints": [
+    "Rumus luas persegi adalah sisi dikali sisi. Gunakan `sisi * sisi`.",
+    "Fungsi `sapa` menerima parameter `nama`. Gunakan parameter tersebut untuk menyusun pesan sapaan.",
+    "Pastikan tidak ada spasi atau karakter tambahan dalam jawabanmu."
+  ]
+}

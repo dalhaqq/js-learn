@@ -1,0 +1,20 @@
+{
+  "id": "basics-variables-001",
+  "type": "write",
+  "title": "Mendeklarasikan Variabel",
+  "description": "Variabel adalah tempat penyimpanan data di memori komputer — seperti kotak berlabel yang bisa diisi nilai. `let` digunakan untuk variabel yang nilainya bisa berubah (mutable), sedangkan `const` untuk nilai tetap yang tidak boleh diubah. Dalam kode nyata, variabel menyimpan data pengguna, hasil perhitungan, atau konfigurasi aplikasi. Kamu akan belajar mendeklarasikan variabel menggunakan `let` dan `const`, lalu menampilkan nilainya dengan `console.log`.\n\n**Instruksi:**\n1. Deklarasikan variabel `nama` menggunakan `let` dengan nilai `'Budi'`\n2. Deklarasikan variabel `umur` menggunakan `const` dengan nilai `25`\n3. Gunakan `console.log` untuk menampilkan: `'Halo, nama saya Budi, umur saya 25 tahun'`",
+  "difficulty": "easy",
+  "topic": "basics",
+  "prerequisites": [],
+  "starterCode": "// 1. Deklarasikan variabel nama dengan let\nlet nama = \"\";\n\n// 2. Deklarasikan variabel umur dengan const\nconst umur = 0;\n\n// 3. Tampilkan pesan perkenalan menggunakan console.log() dan variabel di atas\n",
+  "solution": "let nama = 'Budi';\nconst umur = 25;\nconsole.log('Halo, nama saya ' + nama + ', umur saya ' + umur + ' tahun');",
+  "verification": {
+    "mode": "output",
+    "expectedOutput": "Halo, nama saya Budi, umur saya 25 tahun"
+  },
+  "hints": [
+    "Gunakan `let nama = 'Budi';` untuk mendeklarasikan variabel yang bisa berubah.",
+    "Gunakan `const umur = 25;` untuk mendeklarasikan konstanta yang nilainya tetap.",
+    "Gunakan penggabungan string dengan operator `+`: `'Halo, nama saya ' + nama + ', umur saya ' + umur + ' tahun'`"
+  ]
+}

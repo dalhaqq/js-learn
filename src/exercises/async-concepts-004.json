@@ -1,0 +1,26 @@
+{
+  "id": "async-concepts-004",
+  "type": "multiple-choice",
+  "title": "Konsep Dasar Asinkron",
+  "description": "Meskipun JavaScript hanya berjalan di satu thread (single-threaded), ia tetap bisa menangani operasi yang memakan waktu tanpa memblokir eksekusi kode lainnya. Ini dimungkinkan oleh **event loop** — mekanisme yang mengantrekan callback (dari `setTimeout`, klik tombol, dll.) untuk dieksekusi setelah semua kode synchronous selesai berjalan. Kode di bawah mencampur `console.log` biasa dan `setTimeout` dengan delay 0ms. Walaupun delay-nya 0ms, callback `setTimeout` tetap masuk ke task queue dan menunggu sampai call stack kosong. Pahami urutan eksekusinya: semua kode synchronous dijalankan terlebih dahulu, baru callback dari task queue. Pilih pernyataan yang BENAR berdasarkan output kode tersebut.",
+  "difficulty": "easy",
+  "topic": "async",
+  "prerequisites": ["async-callback-001", "async-promise-002"],
+  "starterCode": "console.log('A');\nsetTimeout(function() {\n  console.log('B');\n}, 0);\nconsole.log('C');",
+  "choices": [
+    { "label": "A", "value": "Output: A, B, C — karena setTimeout dijalankan setelah console.log C" },
+    { "label": "B", "value": "Output: A, C, B — karena callback setTimeout masuk ke antrian tugas (task queue)" },
+    { "label": "C", "value": "Output: B, A, C — karena setTimeout dijalankan lebih dulu" },
+    { "label": "D", "value": "Output: A, B, C — karena timeout 0ms langsung dijalankan" }
+  ],
+  "solution": "B",
+  "verification": {
+    "mode": "test",
+    "testCode": "// Jawaban B adalah benar: event loop menempatkan callback setTimeout ke task queue\n// meskipun timeout 0ms, callback tetap menunggu call stack kosong\nconst result = 'B';\nassert(result === 'B', 'Jawaban salah. Callback setTimeout selalu masuk antrian tugas, meskipun timeout 0ms.');"
+  },
+  "hints": [
+    "Perhatikan bahwa `setTimeout` dengan delay 0ms tidak langsung menjalankan callback.",
+    "JavaScript menggunakan event loop: kode sinkron dijalankan dulu, baru callback dari antrian.",
+    "Urutan eksekusi: 'A' dicetak, setTimeout mendaftarkan callback ke antrian, 'C' dicetak, lalu callback mencetak 'B'."
+  ]
+}

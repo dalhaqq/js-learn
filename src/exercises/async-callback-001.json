@@ -1,0 +1,20 @@
+{
+  "id": "async-callback-001",
+  "type": "write",
+  "title": "Callback Dasar dengan setTimeout",
+  "description": "Callback adalah fungsi yang dikirim sebagai **argumen** ke fungsi lain, dipanggil **nanti** setelah operasi selesai. Ini cara JavaScript single-threaded menangani operasi lambat tanpa blocking: berikan 'instruksi lanjutan' (callback), lalu lanjutkan eksekusi. `setTimeout` contoh sempurna — kode setelahnya tetap berjalan. Pola ini mendasari event handler dan request HTTP.\n\n**Instruksi:**\n1. Buat fungsi `tundaPesan` yang menerima parameter `pesan` dan `callback`\n2. Di dalam `tundaPesan`, gunakan `setTimeout` untuk menunda 1000ms (1 detik)\n3. Di dalam `setTimeout`, panggil `callback(pesan)`\n4. Panggil `tundaPesan` dengan pesan `'Pesan tertunda'` dan callback yang mencetak pesan ke console",
+  "difficulty": "medium",
+  "topic": "async",
+  "prerequisites": ["basics-functions-004"],
+  "starterCode": "// Buat fungsi tundaPesan yang menerima pesan dan callback\nfunction tundaPesan(pesan, callback) {\n  // Gunakan setTimeout dengan delay 1000ms\n  // Panggil callback dengan pesan di dalam setTimeout\n}\n\n// Panggil tundaPesan dengan pesan \"Pesan tertunda\"\n// dan callback yang menampilkan pesan ke console\n",
+  "solution": "function tundaPesan(pesan, callback) {\n  setTimeout(function() {\n    callback(pesan);\n  }, 1000);\n}\n\ntundaPesan('Pesan tertunda', function(pesan) {\n  console.log(pesan);\n});",
+  "verification": {
+    "mode": "output",
+    "expectedOutput": "Pesan tertunda"
+  },
+  "hints": [
+    "Gunakan `setTimeout(function() { ... }, 1000)` untuk menunda 1 detik.",
+    "Callback dipanggil di dalam fungsi anonim yang diberikan ke `setTimeout`.",
+    "Struktur lengkap: `function tundaPesan(pesan, callback) { setTimeout(function() { callback(pesan); }, 1000); }`"
+  ]
+}

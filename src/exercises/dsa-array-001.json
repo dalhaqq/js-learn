@@ -1,0 +1,20 @@
+{
+  "id": "dsa-array-001",
+  "type": "write",
+  "title": "Operasi Dasar Larik (Array)",
+  "description": "Array (larik) adalah struktur data paling fundamental — kumpulan nilai yang disimpan berurutan di memori. push() menambahkan elemen ke akhir array (operasi O(1) — cepat). shift() menghapus elemen pertama (operasi O(n) — lambat karena semua elemen harus bergeser satu posisi). join() menggabungkan semua elemen menjadi string dengan pemisah tertentu. Memahami kompleksitas operasi array penting untuk menulis kode yang efisien — menggunakan shift() di array besar jauh lebih lambat daripada pop(). Kamu akan membuat array, menambah elemen dengan push, menghapus elemen pertama dengan shift, dan menggabungkan elemen dengan join.",
+  "difficulty": "easy",
+  "topic": "dsa",
+  "prerequisites": ["basics-variables-001", "basics-loops-003"],
+  "starterCode": "// 1. Buat larik buah\nconst buah = [];\n\n// 2. Tambahkan 'pisang' ke akhir larik\n// buah.push(...);\n\n// 3. Hapus elemen pertama\n// buah.shift();\n\n// 4. Tampilkan isi larik dan panjangnya\n// console.log('Isi larik: ' + ...);\n// console.log('Panjang: ' + ...);\n\n// 5. Tampilkan elemen kedua (indeks 1)\n// console.log('Elemen kedua: ' + ...);\n",
+  "solution": "const buah = ['apel', 'jeruk', 'mangga'];\nbuah.push('pisang');\nbuah.shift();\nconsole.log('Isi larik: ' + buah.join(', '));\nconsole.log('Panjang: ' + buah.length);\nconsole.log('Elemen kedua: ' + buah[1]);",
+  "verification": {
+    "mode": "output",
+    "expectedOutput": "Isi larik: jeruk, mangga, pisang\nPanjang: 3\nElemen kedua: mangga"
+  },
+  "hints": [
+    "Buat larik dengan `const buah = ['apel', 'jeruk', 'mangga'];`",
+    "Method `.push('pisang')` menambahkan elemen ke akhir larik. Method `.shift()` menghapus elemen pertama.",
+    "Untuk menampilkan isi larik, gunakan `.join(', ')`. Akses elemen dengan `buah[1]` untuk indeks 1."
+  ]
+}

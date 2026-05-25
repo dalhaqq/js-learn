@@ -1,0 +1,21 @@
+{
+  "id": "dom-create-003",
+  "type": "fill-blank",
+  "title": "Membuat Elemen DOM Baru",
+  "description": "JavaScript tidak hanya bisa membaca DOM — ia juga bisa membuat elemen baru secara dinamis. `document.createElement(tag)` membuat elemen di memori (belum muncul di halaman). `appendChild` menambahkan elemen tersebut ke dalam DOM sehingga muncul di halaman. Teknik ini dipakai untuk: loading konten tanpa refresh halaman (SPA), infinite scroll (muat lebih banyak saat scroll ke bawah), notifikasi pop-up, atau menambahkan hasil pencarian secara real-time. Lengkapi kode untuk membuat elemen paragraf baru dan menambahkannya ke halaman.\n\n**Instruksi:**\n1. Isi `___BLANK___` pertama dengan method untuk membuat elemen `<li>` baru\n2. Isi `___BLANK___` kedua dengan property yang mengisi teks elemen\n3. Isi `___BLANK___` ketiga dengan method untuk menambahkan elemen ke parent",
+  "difficulty": "medium",
+  "topic": "dom",
+  "prerequisites": ["dom-selector-001"],
+  "starterCode": "// Diberikan HTML: <ul id=\"daftar\"></ul>\n\nconst daftar = document.getElementById('daftar');\nconst itemBaru = document.___BLANK___('li');\nitemBaru.___BLANK___ = 'Item baru ditambahkan';\ndaftar.___BLANK___(itemBaru);\n\nconsole.log(daftar.children.length);",
+  "blanks": ["createElement", "textContent", "appendChild"],
+  "solution": "const daftar = document.getElementById('daftar');\nconst itemBaru = document.createElement('li');\nitemBaru.textContent = 'Item baru ditambahkan';\ndaftar.appendChild(itemBaru);\n\nconsole.log(daftar.children.length);",
+  "verification": {
+    "mode": "output",
+    "expectedOutput": "1"
+  },
+  "hints": [
+    "Untuk membuat elemen HTML baru, gunakan `document.createElement('li')`.",
+    "Properti untuk mengatur teks elemen adalah `textContent`.",
+    "Method untuk menambahkan elemen anak ke parent adalah `appendChild(itemBaru)`."
+  ]
+}

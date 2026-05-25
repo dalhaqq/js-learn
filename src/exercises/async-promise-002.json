@@ -1,0 +1,20 @@
+{
+  "id": "async-promise-002",
+  "type": "write",
+  "title": "Membuat dan Menggunakan Janji (Promise)",
+  "description": "Promise adalah objek yang mewakili **nilai masa depan** — hasil operasi asinkron. Tiga state: pending, fulfilled, rejected. Keunggulan: `.then().catch()` menggantikan callback bersarang dengan alur linear. Satu `.catch()` menangkap error dari mana pun di rantai.\n\n**Instruksi:**\n1. Buat fungsi `cekStok` yang mengembalikan sebuah Promise\n2. Jika parameter `jumlah` lebih dari 0, resolve dengan pesan `'Stok tersedia: <jumlah> item'`\n3. Jika `jumlah` sama dengan 0, reject dengan pesan `'Stok habis'`\n4. Panggil `cekStok(5)` dan tangani hasilnya dengan `.then()` dan `.catch()`\n5. Tampilkan hasil atau error ke console",
+  "difficulty": "medium",
+  "topic": "async",
+  "prerequisites": ["async-callback-001"],
+  "starterCode": "// Buat fungsi cekStok yang mengembalikan Promise\nfunction cekStok(jumlah) {\n  // return new Promise((resolve, reject) => {\n  //   if (...) resolve(...);\n  //   else reject(...);\n  // });\n}\n\n// Panggil cekStok(5) dengan .then() dan .catch()\ncekStok(5)\n",
+  "solution": "function cekStok(jumlah) {\n  return new Promise(function(resolve, reject) {\n    if (jumlah > 0) {\n      resolve('Stok tersedia: ' + jumlah + ' item');\n    } else {\n      reject('Stok habis');\n    }\n  });\n}\n\ncekStok(5)\n  .then(function(pesan) {\n    console.log(pesan);\n  })\n  .catch(function(error) {\n    console.log(error);\n  });",
+  "verification": {
+    "mode": "output",
+    "expectedOutput": "Stok tersedia: 5 item"
+  },
+  "hints": [
+    "Buat Promise dengan `new Promise(function(resolve, reject) { ... })`.",
+    "Gunakan `resolve(...)` untuk kasus sukses dan `reject(...)` untuk kasus gagal.",
+    "Tangani hasil dengan `.then(function(pesan) { console.log(pesan); }).catch(function(error) { console.log(error); })`"
+  ]
+}

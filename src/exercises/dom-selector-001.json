@@ -1,0 +1,20 @@
+{
+  "id": "dom-selector-001",
+  "type": "write",
+  "title": "Mengakses Elemen DOM",
+  "description": "DOM (Document Object Model) adalah representasi halaman HTML sebagai struktur pohon. Setiap tag HTML menjadi node dalam pohon ini. JavaScript bisa membaca dan mengubah DOM melalui berbagai method selector. `getElementById` mencari elemen berdasarkan atribut `id` — cepat karena `id` harus unik. `querySelector` menggunakan selector CSS (seperti `'.class'` atau `'tag'`) dan mengembalikan elemen pertama yang cocok — lebih fleksibel. Kegunaan selector: membaca konten halaman, mengubah teks, menambahkan elemen baru, atau merespons interaksi pengguna. Kamu akan memilih elemen judul menggunakan `getElementById` dan elemen daftar menggunakan `querySelector`.\n\n**Instruksi:**\n1. Gunakan `document.getElementById` untuk mengambil elemen dengan id `judul`\n2. Ubah teks elemen tersebut menjadi `'Selamat Belajar JavaScript!'`\n3. Gunakan `document.querySelector` untuk mengambil elemen pertama dengan class `paragraf`\n4. Ubah teks elemen tersebut menjadi `'Manipulasi DOM itu menyenangkan.'`\n5. Tampilkan teks kedua elemen ke console",
+  "difficulty": "easy",
+  "topic": "dom",
+  "prerequisites": ["basics-variables-001"],
+  "starterCode": "// Diberikan HTML: <h1 id=\"judul\">Judul Lama</h1><p class=\"paragraf\">Teks lama</p>\n\n// 1. Ambil elemen dengan id 'judul' dan ubah teksnya\nconst judul = document.getElementById('judul');\n\n// 2. Ambil elemen pertama dengan class 'paragraf' dan ubah teksnya\n// const paragraf = document.querySelector(...);\n\n// 3. Tampilkan teks kedua elemen ke console\n// console.log(judul.textContent);\n",
+  "solution": "const judul = document.getElementById('judul');\njudul.textContent = 'Selamat Belajar JavaScript!';\n\nconst paragraf = document.querySelector('.paragraf');\nparagraf.textContent = 'Manipulasi DOM itu menyenangkan.';\n\nconsole.log(judul.textContent);\nconsole.log(paragraf.textContent);",
+  "verification": {
+    "mode": "output",
+    "expectedOutput": "Selamat Belajar JavaScript!\nManipulasi DOM itu menyenangkan."
+  },
+  "hints": [
+    "Gunakan `document.getElementById('judul')` untuk mengambil elemen berdasarkan id.",
+    "Ubah teks elemen dengan properti `.textContent`.",
+    "Untuk query selector: `document.querySelector('.paragraf')` — perhatikan tanda titik `.` untuk class."
+  ]
+}

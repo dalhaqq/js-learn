@@ -1,0 +1,19 @@
+{
+  "id": "dsa-recursion-007",
+  "title": "Rekursi Dasar - Faktorial",
+  "type": "write",
+  "difficulty": "hard",
+  "topic": "dsa",
+  "description": "Rekursi adalah teknik di mana sebuah fungsi memanggil dirinya sendiri untuk menyelesaikan masalah. Setiap fungsi rekursif harus memiliki **base case** (kondisi berhenti) agar tidak terjadi infinite loop. Contoh klasik: faktorial. Faktorial dari n (ditulis n!) adalah hasil perkalian semua bilangan bulat positif dari 1 sampai n. Contoh: 5! = 5 × 4 × 3 × 2 × 1 = 120. Base case: 0! = 1 dan 1! = 1.\n\n**Instruksi:**\n1. Buat fungsi `faktorial(n)` yang menghitung faktorial secara rekursif\n2. Base case: jika n <= 1, kembalikan 1\n3. Recursive case: kembalikan n * faktorial(n - 1)\n4. Panggil faktorial(5) dan tampilkan hasilnya dengan console.log()\n5. Panggil faktorial(0) dan tampilkan hasilnya",
+  "starterCode": "// 1. Buat fungsi faktorial rekursif\nfunction faktorial(n) {\n  // 2. Base case\n  // 3. Recursive case\n}\n\n// 4. Tampilkan faktorial(5)\n\n// 5. Tampilkan faktorial(0)\n",
+  "solution": "function faktorial(n) {\n  if (n <= 1) {\n    return 1;\n  }\n  return n * faktorial(n - 1);\n}\nconsole.log(faktorial(5));\nconsole.log(faktorial(0));",
+  "hints": [
+    "Base case: ketika n <= 1, kembalikan 1 (jangan panggil faktorial lagi)",
+    "Recursive case: kembalikan n * faktorial(n - 1) — setiap panggilan mengurangi n sebesar 1",
+    "Hati-hati: tanpa base case, fungsi akan memanggil dirinya sendiri selamanya dan menyebabkan stack overflow"
+  ],
+  "verification": {
+    "mode": "test",
+    "testCode": "assert(typeof faktorial === 'function', 'Harus membuat fungsi faktorial'); assert(faktorial(5) === 120, 'faktorial(5) harus 120'); assert(faktorial(0) === 1, 'faktorial(0) harus 1'); assert(faktorial(1) === 1, 'faktorial(1) harus 1'); assert(faktorial(3) === 6, 'faktorial(3) harus 6');"
+  }
+}

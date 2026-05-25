@@ -1,0 +1,20 @@
+{
+  "id": "basics-conditions-002",
+  "type": "write",
+  "title": "Kondisi if/else",
+  "description": "Pernyataan if/else memungkinkan kode mengambil keputusan berdasarkan kondisi boolean (true/false). Ini seperti percabangan di jalan: jika kondisi true, jalur A; jika false, jalur B. Di dunia nyata, kondisi digunakan untuk validasi input pengguna, sistem login, kalkulasi diskon, atau routing halaman. Urutan else if penting — JavaScript mengecek dari atas ke bawah dan mengambil cabang pertama yang cocok. Kamu akan belajar menggunakan pernyataan `if`, `else if`, dan `else` untuk membuat keputusan dalam kode.\n\n**Instruksi:**\n1. Deklarasikan variabel `nilai` dengan nilai `85`\n2. Tulis kondisi:\n   - Jika `nilai >= 90`, tampilkan `'Nilai A'`\n   - Jika `nilai >= 80`, tampilkan `'Nilai B'`\n   - Jika `nilai >= 70`, tampilkan `'Nilai C'`\n   - Selain itu, tampilkan `'Nilai D'`\n3. Console.log hasilnya",
+  "difficulty": "easy",
+  "topic": "basics",
+  "prerequisites": ["basics-variables-001"],
+  "starterCode": "// Deklarasikan variabel nilai\nlet nilai = 0;\n\n// Tulis kondisi if/else if/else\n// if (nilai >= 90) {\n//   console.log('Nilai A');\n// } else if (...)\n",
+  "solution": "const nilai = 85;\n\nif (nilai >= 90) {\n  console.log('Nilai A');\n} else if (nilai >= 80) {\n  console.log('Nilai B');\n} else if (nilai >= 70) {\n  console.log('Nilai C');\n} else {\n  console.log('Nilai D');\n}",
+  "verification": {
+    "mode": "output",
+    "expectedOutput": "Nilai B"
+  },
+  "hints": [
+    "Mulai dengan `const nilai = 85;`",
+    "Gunakan `if (nilai >= 90)` untuk kondisi pertama. Urutan kondisi penting: periksa dari nilai tertinggi ke terendah.",
+    "Struktur lengkap: `if (...) { ... } else if (...) { ... } else { ... }`. Jangan lupa kurung kurawal `{}`."
+  ]
+}

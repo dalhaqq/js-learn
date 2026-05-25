@@ -1,0 +1,19 @@
+{
+  "id": "dsa-filter-reduce-006",
+  "title": "Filter dan Reduce Array",
+  "type": "write",
+  "difficulty": "medium",
+  "topic": "dsa",
+  "description": "Dua method array yang sangat powerful adalah `.filter()` dan `.reduce()`. `.filter()` membuat array baru yang hanya berisi elemen yang lolos kondisi tertentu (callback mengembalikan true). `.reduce()` menggabungkan semua elemen array menjadi satu nilai — cocok untuk menjumlahkan, mengalikan, atau mengakumulasi data. Keduanya tidak mengubah array asli.\n\n**Instruksi:**\n1. Buat array `nilai` berisi [85, 45, 90, 30, 78, 55, 92, 40]\n2. Gunakan .filter() untuk mendapatkan array `lulus` yang hanya berisi nilai >= 60\n3. Tampilkan array lulus\n4. Gunakan .reduce() untuk menghitung total nilai dengan menjumlahkan semua elemen array `nilai`\n5. Tampilkan total nilai\n6. Gunakan .reduce() untuk menghitung rata-rata (total / jumlah elemen)\n7. Tampilkan rata-rata",
+  "starterCode": "// 1. Buat array nilai\nlet nilai = [];\n\n// 2. Filter nilai >= 60\nlet lulus = nilai.filter();\n\n// 3. Tampilkan array lulus\n\n// 4. Reduce untuk total\nlet total = nilai.reduce();\n\n// 5. Tampilkan total\n\n// 6. Reduce untuk rata-rata\nlet rataRata = nilai.reduce();\n\n// 7. Tampilkan rata-rata\n",
+  "solution": "let nilai = [85, 45, 90, 30, 78, 55, 92, 40];\nlet lulus = nilai.filter(function(n) { return n >= 60; });\nconsole.log(lulus);\nlet total = nilai.reduce(function(acc, n) { return acc + n; }, 0);\nconsole.log(total);\nlet rataRata = nilai.reduce(function(acc, n) { return acc + n; }, 0) / nilai.length;\nconsole.log(rataRata);",
+  "hints": [
+    "Callback .filter() harus mengembalikan true/false — elemen dengan true akan dimasukkan ke array hasil",
+    ".reduce() menerima callback dengan 2 parameter: accumulator (acc) dan nilai saat ini (n)",
+    "Parameter kedua .reduce() adalah nilai awal accumulator — gunakan 0 untuk penjumlahan"
+  ],
+  "verification": {
+    "mode": "test",
+    "testCode": "assert(Array.isArray(lulus), 'lulus harus berupa array'); assert(lulus.length === 5, 'Harus ada 5 nilai yang >= 60'); assert(lulus[0] === 85 && lulus[1] === 90 && lulus[2] === 78 && lulus[3] === 92, 'Array lulus berisi 85, 90, 78, 92'); assert(typeof total === 'number' && total === 515, 'Total harus 515'); assert(typeof rataRata === 'number' && rataRata === 64.375, 'Rata-rata harus 64.375');"
+  }
+}
